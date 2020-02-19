@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+　<title>chart</title> 
+</head>
+<body>
+  <h1>chart</h1>
+  <canvas id="myBarChart"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script>
+  var ctx = document.getElementById("myBarChart");
+  var myBarChart = new Chart(ctx, {
+    type: 'bar',  //chart type
+    data:{
+      labels: [2017,2018,2019], //Horizontal axis label
+      datasets: [
+        {
+          label: 'male',      //data group one
+          data: [55, 45, 73], //data 
+          backgroundColor: [   //data's color 
+              "#ff0000",   //red
+              "#00ff00",    //green
+              "#0000ff"]    //blue
+        },{
+          label: 'female',  //data group two
+          data: [56, 67, 62],
+          backgroundColor: [              
+              "skyblue", //skyblue
+              "pink", //pink
+              "orange"] //organge
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true, //if you want to show the chart'title
+        text: 'leaves'  //chart's title
+      },
+      scales: {  //setting about axis
+        yAxes: [{  //vertical axis
+          ticks: {
+            suggestedMax: 100, 
+            suggestedMin: 0,
+            stepSize: 10
+          }
+        }]
+      },
+    }
+  });
+  </script>
+</body>
+</html>
